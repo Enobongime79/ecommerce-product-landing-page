@@ -8,9 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
 </head>
+
 <body style="font-family: Kumbh Sans;">
-    <div class="navbar flex flex-row font-light py-6 lg:px-40 md:px-10 px-4 items-center">
+    <div class="navbar flex flex-row font-light md:py-6 py-5 px-4 lg:px-40  items-center">
         <div class="flex items-center me-2">
             <button id="hamburger" class="lg:hidden mx-1">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -28,11 +32,49 @@
             <p>About</p>
             <p>Contact</p>
         </div>
-        <div class="flex flex-row ms-auto items-center justify-between gap-10">
-            <img style="height: 20px;" src="ecommerce-product-page-main/images/icon-cart.svg" alt="">
-            <img style="height: 40px;" src="ecommerce-product-page-main/images/image-avatar.png" alt="">
+        <div class="flex flex-row ms-auto items-center justify-between md:gap-10 gap-4">
+            <img class="h-5" src="ecommerce-product-page-main/images/icon-cart.svg" alt="">
+            <img class="h-6" src="ecommerce-product-page-main/images/image-avatar.png" alt="">
         </div>
     </div>
     <hr class="border-none h-px bg-gray-200 hidden mx-40 lg:block">
+
+    <div class="relative w-full mx-auto overflow-hidden md:hidden max-w">
+    <!-- Slides -->
+        <div id="carousel" class="flex transition-transform duration-300 ease-in-out">
+            <img src="/ecommerce-product-page-main/images/image-product-1.jpg" class="w-full aspect-5/3 object-cover shrink-0" />
+            <img src="/ecommerce-product-page-main/images/image-product-2.jpg" class="w-full aspect-5/3 object-cover shrink-0" />
+            <img src="/ecommerce-product-page-main/images/image-product-3.jpg" class="w-full aspect-5/3 object-cover shrink-0" />
+            <img src="/ecommerce-product-page-main/images/image-product-4.jpg" class="w-full aspect-5/3 object-cover shrink-0" />
+        </div>
+
+    <!-- Left arrow -->
+        <button
+            onclick="prevSlide()"
+            class="absolute left-3 top-1/2 -translate-y-1/2 bg-white w-9 h-9 rounded-full shadow flex items-center justify-center">
+            ‹
+        </button>
+
+  <!-- Right arrow -->
+        <button
+            onclick="nextSlide()"
+            class="absolute right-3 top-1/2 -translate-y-1/2 bg-white w-9 h-9 rounded-full shadow flex items-center justify-center"
+        >
+            ›
+        </button>
+    </div>
+
+    <div style="font-family: Figtree;" class="mt-6 mx-6">
+        <p class="text-sm font-semibold text-gray-600">SNEAKER COMPANY</p>
+        <h1 class="font-bold text-3xl pt-4">Fall Limited Edition Sneakers</h1>
+        <p class="pt-5 text-lg text-gray-600">These low profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+
+        <div class="flex pt-6 items-center">
+            <p class="text-4xl font-bold">$125.00 <span class="font-bold text-xl bg-black text-white p-2 rounded">50%</span></p>
+            <p class="ms-auto text-lg font-bold text-gray-600"><s>$250.00</s></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
