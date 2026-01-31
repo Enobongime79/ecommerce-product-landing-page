@@ -38,10 +38,32 @@
             <img class="h-6" src="ecommerce-product-page-main/images/image-avatar.png" alt="">
         </div>
     </div>
+
+    <div id="overlay"
+        class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden"></div>
+
+    <aside id="sidebar"
+        class="fixed top-0 left-0 h-full w-64 bg-white z-50
+                transform -translate-x-full transition-transform duration-300
+                lg:hidden">
+
+        <div class="p-6">
+            <button id="closeSidebar" class="mb-6 text-xl">✕</button>
+
+            <nav class="flex flex-col gap-6 font-semibold text-lg">
+                <a href="#">Collections</a>
+                <a href="#">Men</a>
+                <a href="#">Women</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </aside>
+
     <hr class="border-none h-px bg-gray-200 hidden mx-40 lg:block">
 
-    <div class="flex flex-col lg:flex-row lg:mx-40 lg:mt-16 gap-10">
-        <div class="relative w-full mx-auto overflow-hidden lg:overflow-hidden max-w lg:max-w-sm">
+    <div class="flex flex-col lg:flex-row lg:mx-50 lg:mt-16 gap-10 lg:justify-between">
+        <div class="relative w-full mx-auto overflow-hidden lg:overflow-hidden max-w lg:max-w-sm lg:w-auto lg:mx-0">
     <!-- Slides -->
             <div id="carousel" class="flex transition-transform duration-300 ease-in-out">
                 <img src="/ecommerce-product-page-main/images/image-product-1.jpg" class="w-full h-full aspect-5/3 object-cover shrink-0 lg:aspect-4/4 lg:rounded-2xl"  />
@@ -64,6 +86,13 @@
             >
                 ›
             </button>
+
+            <div class="lg:flex-row lg:flex pt-6 justify-between hidden mx-2">
+                <img id="thumbnailOne" class="cursor-pointer h-19 rounded-lg hover:opacity-60" src="/ecommerce-product-page-main/images/image-product-1-thumbnail.jpg" alt="">
+                <img id="thumbnailTwo" class="cursor-pointer h-19 rounded-lg hover:opacity-60" src="/ecommerce-product-page-main/images/image-product-2-thumbnail.jpg" alt="">
+                <img id="thumbnailThree" class="cursor-pointer h-19 rounded-lg hover:opacity-60" src="/ecommerce-product-page-main/images/image-product-3-thumbnail.jpg" alt="">
+                <img id="thumbnailFour" class="cursor-pointer h-19 rounded-lg hover:opacity-60" src="/ecommerce-product-page-main/images/image-product-4-thumbnail.jpg" alt="">
+            </div>
         </div>
 
         <div style="font-family: Figtree;" class="mt-6 mx-6 lg:max-w-sm">
