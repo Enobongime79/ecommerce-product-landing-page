@@ -20,8 +20,6 @@ const orderAmt = document.getElementById("orderAmt");
 const plusBtn = document.getElementById("plusBtn");
 const minusBtn = document.getElementById("minusBtn");
 
-const cart = document.getElementById("cart");
-
 plusBtn.addEventListener("click", () => {
   let value = Number(orderAmt.textContent);
   value++;
@@ -36,10 +34,6 @@ minusBtn.addEventListener("click", () => {
     value--;
     orderAmt.textContent = value;
   }
-})
-
-cart.addEventListener("click", () => {
-  cart.setAttribute("shadow", "none")
 })
 
 const hamburger = document.getElementById("hamburger");
@@ -104,4 +98,31 @@ thumbnailFour.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   thumbnailOne.setAttribute("class", "cursor-pointer h-19 rounded-lg opacity-60 border-amber-500 border-2")
+})
+
+const cart = document.getElementById("cart");
+const cartContent = document.getElementById("cartContent")
+let cartState = false;
+
+cart.addEventListener("click", () => {
+
+  if (!cartState){
+    cartContent.classList.remove("hidden");
+    cartContent.classList.add("lg:flex");
+    cartState = true;
+  }
+
+  else if (cartState){
+    cartContent.classList.add("hidden");
+    cartState = false;
+    cartContent.classList.remove("lg:flex");
+  }
+
+})
+
+const addToCart = document.getElementById("addToCart");
+const cartView = document.getElementById("cartView");
+
+addToCart.addEventListener("click", () => {
+  cartView.parentNode.removeChild(cartView);
 })
