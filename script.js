@@ -121,8 +121,67 @@ cart.addEventListener("click", () => {
 })
 
 const addToCart = document.getElementById("addToCart");
-const cartView = document.getElementById("cartView");
+const cartContainer = document.getElementById("cartContainer");
+
+const cartClose = document.getElementById("cartClose");
+cartClose.addEventListener("click", () => {
+  cartContent.classList.add("hidden");
+  cartState = false;
+})
+
+const cartItemEmpty = false;
 
 addToCart.addEventListener("click", () => {
-  cartView.parentNode.removeChild(cartView);
+
+  if (!cartItemEmpty){
+    const cartView = document.getElementById("cartView");
+    cartView.parentNode.removeChild(cartView);
+
+    cartContainer.classList.remove("items-center", "justify-center");
+    cartContainer.classList.add("flex-col", "pt-7");
+
+    const cartDiv = document.createElement("div");
+    const cartInnerDiv = document.createElement("div");
+    const img = document.createElement("img");
+
+    img.src = "/ecommerce-product-page-main/images/image-product-1-thumbnail.jpg";
+    img.classList.add("h-12", "rounded-sm", "w-12");
+
+    const productDesc = document.createElement("div");
+    productDesc.innerHTML = `<p class="font-normal text-sm text-gray-600">Fall Limited Edition Sneakers</p>
+                              <p class="font-normal text-sm text-gray-600">$125.00 x ${orderAmt.innerText} <span class="font-bold text-black">$${125 * Number(orderAmt.innerText)}</span></p>`;
+
+    const trash = document.createElement("img");
+    trash.src = "/ecommerce-product-page-main/images/icon-delete.svg";
+    trash.classList.add("h-4");
+
+    trash.addEventListener("click", () => {
+      genDiv.remove();
+      cartContainer.classList.remove("flex-col", "pt-7");
+      cartContainer.classList.add("items-center", "justify-center");
+      cartContainer.innerHTML = `<p id="cartView" class="text-sm text-gray-400">Your cart is empty.</p>`;
+    })
+
+    cartInnerDiv.append(img);
+    cartInnerDiv.append(productDesc);
+    cartInnerDiv.append(trash);
+    cartInnerDiv.setAttribute("class", "flex flex-row justify-around items-center w-full px-4");
+    cartDiv.append(cartInnerDiv);
+
+    const checkBtn = document.createElement("button");
+    checkBtn.innerText = "Checkout";
+    checkBtn.setAttribute("class", "font-bold text-black text-sm");
+
+    const btnDiv = document.createElement("div");
+    btnDiv.setAttribute("class", "bg-orange-500 rounded-lg flex flex-row justify-center mx-4 py-3 mt-6");
+
+    btnDiv.append(checkBtn);
+
+    const genDiv = document.createElement("div");
+    genDiv.append(cartDiv);
+    genDiv.append(btnDiv);
+
+    cartContainer.append(genDiv);
+    }
+
 })
