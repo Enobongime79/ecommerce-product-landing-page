@@ -34,8 +34,11 @@
             <a href=""><p>Contact</p></a>
         </div>
         <div class="flex flex-row ms-auto items-center justify-between lg:gap-10 gap-4">
-            <img id="cart" class="h-5" src="ecommerce-product-page-main/images/icon-cart.svg" alt="">
-            <img class="h-6" src="ecommerce-product-page-main/images/image-avatar.png" alt="">
+            <div class="relative">
+                <img id="cart" class="h-5" src="ecommerce-product-page-main/images/icon-cart.svg" alt="">
+                <span id="notisBadge" class="hidden bg-orange-500 text-white font-bold rounded-lg px-2 badge text-xs z-40 absolute left-2 bottom-3"></span>
+            </div>
+            <img class="h-6 hover:border-2 border-orange-500 rounded-xl" src="ecommerce-product-page-main/images/image-avatar.png" alt="">
         </div>
     </div>
 
@@ -43,7 +46,7 @@
         <div class="mx-4 sm: bg-white rounded-md pt-4 font-bold lg:w-80 shadow-lg">
             <div class="flex flex-row justify-between">
                 <p class="pb-3 px-6 ">Cart</p>
-                <p id="cartClose" class="font-bold pe-6">X</p>
+                <button id="cartClose" class="font-bold pe-6">X</button>
             </div>
             <hr class="border border-gray-100">
             <div id="cartContainer" class="h-40 lg:h-40 md:h-80 flex items-center justify-center">

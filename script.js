@@ -108,14 +108,14 @@ cart.addEventListener("click", () => {
 
   if (!cartState){
     cartContent.classList.remove("hidden");
-    cartContent.classList.add("lg:flex");
+    cartContent.classList.add("flex");
     cartState = true;
   }
 
   else if (cartState){
     cartContent.classList.add("hidden");
     cartState = false;
-    cartContent.classList.remove("lg:flex");
+    cartContent.classList.remove("flex");
   }
 
 })
@@ -160,6 +160,8 @@ addToCart.addEventListener("click", () => {
       cartContainer.classList.remove("flex-col", "pt-7");
       cartContainer.classList.add("items-center", "justify-center");
       cartContainer.innerHTML = `<p id="cartView" class="text-sm text-gray-400">Your cart is empty.</p>`;
+      notisBadge.classList.add("hidden");
+      notisBadge.innerText = 0;
     })
 
     cartInnerDiv.append(img);
@@ -180,6 +182,10 @@ addToCart.addEventListener("click", () => {
     const genDiv = document.createElement("div");
     genDiv.append(cartDiv);
     genDiv.append(btnDiv);
+
+    const notisBadge = document.getElementById("notisBadge");
+    notisBadge.classList.remove("hidden");
+    notisBadge.innerText = orderAmt.innerText;
 
     cartContainer.append(genDiv);
     }
